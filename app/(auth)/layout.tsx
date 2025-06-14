@@ -2,6 +2,13 @@ import Image from "next/image";
 import Logo from "@/components/ui/logo";
 import AuthBg from "@/public/images/auth-bg.svg";
 
+// ✅ SEO Metadata
+export const metadata = {
+  title: "Auth - Employment Rights Toolkit",
+  description: "Sign in or create an account to use the Employment Rights toolkit.",
+  robots: "noindex, nofollow", // prevents auth pages from being indexed
+};
+
 export default function AuthLayout({
   children,
 }: {

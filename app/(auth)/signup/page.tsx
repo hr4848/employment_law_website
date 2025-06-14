@@ -1,110 +1,92 @@
-export const metadata = {
-  title: "Sign Up - Simple",
-  description: "Page description",
-};
+'use client'
 
-export default function SignUp() {
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { supabase } from '@/lib/supabaseClient'
+import Link from 'next/link'
+
+export default function SignIn() {
+  const router = useRouter()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState<string | null>(null)
+
+  const handleSignIn = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    console.log('🔐 Attempting sign in with:', { email })
+
+    const { error } = await supabase.auth.signInWithPassword({ email, password })
+
+    if (error) {
+      setError(error.message)
+      console.error('❌ Sign-in error:', error.message)
+    } else {
+      console.log('✅ Sign-in success! Redirecting to dashboard...')
+      router.push('/dashboard')
+    }
+  }
+
   return (
     <>
       <div className="mb-10">
-        <h1 className="text-4xl font-bold">Create your account</h1>
+        <h1 className="text-4xl font-bold">Sign in to your account</h1>
       </div>
-      {/* Form */}
-      <form>
+
+      <form onSubmit={handleSignIn}>
         <div className="space-y-4">
           <div>
-            <label
-              className="mb-1 block text-sm font-medium text-gray-700"
-              htmlFor="name"
-            >
-              Full name
-            </label>
-            <input
-              id="name"
-              className="form-input w-full py-2"
-              type="text"
-              placeholder="Corey Barker"
-              required
-            />
-          </div>
-          <div>
-            <label
-              className="mb-1 block text-sm font-medium text-gray-700"
-              htmlFor="email"
-            >
+            <label htmlFor="email" className="mb-1 block text-sm font-medium text-gray-700">
               Email
             </label>
             <input
               id="email"
               className="form-input w-full py-2"
               type="email"
-              placeholder="corybarker@email.com"
+              placeholder="you@email.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
+
           <div>
-            <label
-              className="mb-1 block text-sm font-medium text-gray-700"
-              htmlFor="phone"
-            >
-              Phone
-            </label>
-            <input
-              id="phone"
-              className="form-input w-full py-2"
-              type="text"
-              placeholder="(+750) 932-8907"
-              required
-            />
-          </div>
-          <div>
-            <label
-              className="mb-1 block text-sm font-medium text-gray-700"
-              htmlFor="password"
-            >
+            <label htmlFor="password" className="mb-1 block text-sm font-medium text-gray-700">
               Password
             </label>
             <input
               id="password"
               className="form-input w-full py-2"
               type="password"
-              autoComplete="on"
               placeholder="••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
+
+          {error && <p className="text-red-600 mt-2">{error}</p>}
         </div>
-        <div className="mt-6 space-y-3">
-          <button className="btn w-full bg-linear-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow-sm hover:bg-[length:100%_150%]">
-            Register
-          </button>
-          <div className="text-center text-sm italic text-gray-400">Or</div>
-          <button className="btn w-full bg-linear-to-t from-gray-900 to-gray-700 bg-[length:100%_100%] bg-[bottom] text-white shadow-sm hover:bg-[length:100%_150%]">
-            Continue with GitHub
+
+        <div className="mt-6">
+          <button
+            type="submit"
+            className="btn w-full bg-blue-600 text-white shadow-sm hover:bg-blue-700"
+          >
+            Sign In
           </button>
         </div>
       </form>
 
-      {/* Bottom link */}
       <div className="mt-6 text-center">
-        <p className="text-sm text-gray-500">
-          By signing up, you agree to the{" "}
-          <a
-            className="whitespace-nowrap font-medium text-gray-700 underline hover:no-underline"
-            href="#0"
-          >
-            Terms of Service
-          </a>{" "}
-          and{" "}
-          <a
-            className="whitespace-nowrap font-medium text-gray-700 underline hover:no-underline"
-            href="#0"
-          >
-            Privacy Policy
-          </a>
-          .
-        </p>
+        <Link href="/reset-password" className="text-sm text-gray-700 underline hover:no-underline">
+          Forgot password?
+        </Link>
+        <br />
+        <Link href="/signup" className="text-sm text-gray-700 underline hover:no-underline">
+          Don’t have an account? Sign up
+        </Link>
       </div>
     </>
-  );
+  )
 }
