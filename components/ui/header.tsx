@@ -10,27 +10,27 @@ export default function Header() {
         <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-white/90 px-3 shadow-lg shadow-black/[0.03] backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]">
           {/* Site branding */}
           <div className="flex flex-1 items-center">
-            <Logo />
+            <Logo /> {/* //TODO - need to change the file for this */}
           </div>
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex md:grow">
             {/* Desktop menu links */}
             <ul className="flex grow flex-wrap items-center justify-center gap-4 text-sm lg:gap-8">
-              <li className="px-3 py-1">
-                <Link
+              {/* <li className="px-3 py-1"> */}
+                {/* <Link
                   href="/pricing"
                   className="flex items-center text-gray-700 transition hover:text-gray-900"
                 >
                   Pricing
-                </Link>
-              </li>
+                </Link> */}
+              {/* </li> */}
               <li className="px-3 py-1">
                 <Link
-                  href="/customers"
+                  href="/toolkit"
                   className="flex items-center text-gray-700 transition hover:text-gray-900"
                 >
-                  Customers
+                  Toolkit
                 </Link>
               </li>
               <li className="px-3 py-1">
@@ -43,17 +43,25 @@ export default function Header() {
               </li>
               <li className="px-3 py-1">
                 <Link
+                  href="/about"
+                  className="flex items-center text-gray-700 transition hover:text-gray-900"
+                >
+                  About
+                </Link>
+              </li>
+              {/* <li className="px-3 py-1">
+                <Link
                   href="/documentation"
                   className="flex items-center text-gray-700 transition hover:text-gray-900"
                 >
                   Docs
                 </Link>
-              </li>
+              </li> */}
               {/* 1st level: hover */}
-              <Dropdown title="Extra">
+              {/* <Dropdown title="Extra"> */}   {/* //NOTE - to consider reintroducing if we have more pages */}
                 {/* 2nd level: hover */}
-                <li>
-                  <Link
+                {/* <li> */}
+                  {/* <Link
                     href="/support"
                     className="flex rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100"
                   >
@@ -68,7 +76,7 @@ export default function Header() {
                     Apps
                   </Link>
                 </li>
-              </Dropdown>
+              </Dropdown> */}
             </ul>
           </nav>
 

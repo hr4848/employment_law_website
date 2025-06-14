@@ -12,10 +12,10 @@ export default function Footer({ border = false }: { border?: boolean }) {
           {/* 1st block */}
           <div className="space-y-2 sm:col-span-12 lg:col-span-4">
             <div>
-              <Logo />
-            </div>
+              <Logo />   {/* //TODO - need up date this */}
+            </div> 
             <div className="text-sm text-gray-600">
-              &copy; Cruip.com - All rights reserved.
+              &copy; employmentrightstoolkit.com - All rights reserved.
             </div>
           </div>
 
@@ -31,7 +31,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                   Features
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
                   href="#0"
@@ -46,21 +46,21 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 >
                   Pricing & Plans
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
                   href="#0"
                 >
                   Changelog
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
                   href="#0"
                 >
-                  Our method
+                  Our method {/* //TODO  - need to do this */}
                 </Link>
               </li>
             </ul>
@@ -78,14 +78,14 @@ export default function Footer({ border = false }: { border?: boolean }) {
                   About us
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
                   href="#0"
                 >
                   Diversity & Inclusion
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
@@ -94,22 +94,22 @@ export default function Footer({ border = false }: { border?: boolean }) {
                   Blog
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
                   href="#0"
                 >
                   Careers
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
                   href="#0"
                 >
                   Financial statements
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -117,26 +117,26 @@ export default function Footer({ border = false }: { border?: boolean }) {
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
             <h3 className="text-sm font-medium">Resources</h3>
             <ul className="space-y-2 text-sm">
-              <li>
-                <Link
+              {/* <li> {/* //NOTE -  possible future feature */}
+                {/* <Link
                   className="text-gray-600 transition hover:text-gray-900"
                   href="#0"
                 >
                   Community
                 </Link>
-              </li>
+              </li> */} 
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
+                  href="#0" //TODO - need to add
                 >
-                  Terms of service
+                  Terms of service 
                 </Link>
               </li>
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
+                  href="#0" //TODO - need to add
                 >
                   Report a vulnerability
                 </Link>
@@ -148,8 +148,8 @@ export default function Footer({ border = false }: { border?: boolean }) {
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
             <h3 className="text-sm font-medium">Social</h3>
             <ul className="flex gap-1">
-              <li>
-                <Link
+              {/* <li>
+                <Link //TODO - to change socials
                   className="flex items-center justify-center text-blue-500 transition hover:text-blue-600"
                   href="#0"
                   aria-label="Twitter"
@@ -162,7 +162,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                     <path d="m13.063 9 3.495 4.475L20.601 9h2.454l-5.359 5.931L24 23h-4.938l-3.866-4.893L10.771 23H8.316l5.735-6.342L8 9h5.063Zm-.74 1.347h-1.457l8.875 11.232h1.36l-8.778-11.232Z"></path>
                   </svg>
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   className="flex items-center justify-center text-blue-500 transition hover:text-blue-600"
@@ -179,7 +179,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 </Link>
               </li>
               <li>
-                <Link
+                {/* <Link //TODO - add linkedin?
                   className="flex items-center justify-center text-blue-500 transition hover:text-blue-600"
                   href="#0"
                   aria-label="Github"
@@ -191,7 +191,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                   >
                     <path d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z"></path>
                   </svg>
-                </Link>
+                </Link> */}
               </li>
             </ul>
           </div>
@@ -199,16 +199,16 @@ export default function Footer({ border = false }: { border?: boolean }) {
       </div>
 
       {/* Big text */}
-      <div className="relative -mt-16 h-60 w-full -z-10" aria-hidden="true">
+      {/* <div className="relative -mt-16 h-60 w-full -z-10" aria-hidden="true">
         <div className="pointer-events-none absolute left-1/2 -z-10 -translate-x-1/2 text-center text-[348px] font-bold leading-none before:bg-linear-to-b before:from-gray-200 before:to-gray-100/30 before:to-80% before:bg-clip-text before:text-transparent before:content-['Simple'] after:absolute after:inset-0 after:bg-gray-300/70 after:bg-clip-text after:text-transparent after:mix-blend-darken after:content-['Simple'] after:[text-shadow:0_1px_0_white]"></div>
-        {/* Glow */}
-        <div
+        Glow */}
+        {/* <div
           className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2/3"
           aria-hidden="true"
         >
           <div className="h-56 w-56 rounded-full border-[20px] border-blue-700 blur-[80px] will-change-[filter]"></div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </footer>
   );
 }

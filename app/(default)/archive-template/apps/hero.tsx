@@ -14,8 +14,7 @@ export default function Hero() {
             </h1>
             <div className="mx-auto max-w-3xl">
               <p className="text-lg text-gray-700">
-                Enhance your projects with our professionally-built app
-                extensions.
+                Helping employees navigate employment disputes. 
               </p>
             </div>
           </div>

@@ -1,3 +1,5 @@
+//TODO - need to explore this and update once i've finsihed the mvp
+
 import Accordion from "@/components/accordion";
 
 export default function Faqs() {
